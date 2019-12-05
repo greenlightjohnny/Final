@@ -479,35 +479,60 @@ main nav .menuIcon.open .bottomBar {
 
 /**************************************************************************
 *********************** STORE *****************************************/
-.store {
+.resources {
   padding-bottom: 4rem;
+  padding-top: 4rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff));
   background: linear-gradient(#fff);
 }
 
 @media (min-width: 900px) {
-  .store {
+  .resources {
     padding-top: 3rem;
   }
 }
 
-@media (min-width: 600px) {
-  .store .storeTop {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .store .storeTop p {
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 3px 10px rgba(50, 50, 50, 0.05);
-            box-shadow: 0 3px 10px rgba(50, 50, 50, 0.05);
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
+.resources .aflex {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.store h2 {
+.resources .water {
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin: 1rem;
+  max-width: 470px;
+  min-width: 350px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.resources .water ul {
+  padding-left: 1rem;
+}
+
+.resources .water li {
+  margin-top: 1rem;
+}
+
+.resources h2 {
   text-align: center;
   font-size: 3rem;
   letter-spacing: 0.2rem;
@@ -530,7 +555,7 @@ main nav .menuIcon.open .bottomBar {
   text-align: center;
 }
 
-.store h3 {
+.resources h3 {
   text-align: center;
   font-size: 2rem;
   font-family: "Montserrat";
@@ -540,134 +565,16 @@ main nav .menuIcon.open .bottomBar {
   padding-bottom: 1rem;
 }
 
-.store h3 .some {
+.resources h3 .some {
   font-size: 1.3rem;
   letter-spacing: 0.1rem;
   color: #969699;
 }
 
-.store p {
+.resources p {
   color: #000;
   line-height: 1.7rem;
   padding: 5px 15px 30px 15px;
-}
-
-.store .price {
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  color: #000;
-  font-weight: bold;
-}
-
-.items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.items h4 {
-  text-align: center;
-  color: #969699;
-}
-
-.items h3 {
-  padding-bottom: 0;
-}
-
-.items a {
-  text-decoration: none;
-  border-radius: 20px;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  color: white;
-}
-
-.items .imgc {
-  max-width: 500px;
-  overflow: hidden;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-
-.items .imgc img {
-  max-width: 500px;
-  min-width: 300px;
-  max-height: 100vh;
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-  overflow: hidden;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-@media (orientation: landscape) {
-  .items .imgc img {
-    width: auto;
-  }
-}
-
-.items .card {
-  max-width: 400px;
-  min-width: 300px;
-  max-height: 100vh;
-  border-radius: 10px;
-  background-color: #fff;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-@media (orientation: landscape) {
-  .items .card {
-    max-height: -webkit-max-content;
-    max-height: -moz-max-content;
-    max-height: max-content;
-  }
-}
-
-@media (min-width: 600px) {
-  .items .card {
-    margin: 1rem;
-  }
-}
-
-@media (min-width: 900px) {
-  .items .card {
-    margin: 2rem;
-  }
-}
-
-.items .card:hover img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 /**************************************************************************

@@ -510,29 +510,42 @@ padding-bottom: 4rem;
 /**************************************************************************
 *********************** STORE *****************************************/
 
-.store {
+.resources {
   padding-bottom: 4rem;
+  padding-top: 4rem;
   background: linear-gradient(#fff);
 
   @include tabletL {
     padding-top: 3rem;
   }
 
-  .storeTop {
-    @include tabletP {
-      width: 90%;
-      margin: 0 auto;
+  .aflex {
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+  }
 
-      p {
-        width: 50%;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(50, 50, 50, 0.05);
-        padding-top: 1rem;
-        margin-top: 1rem;
-      }
+  .water {
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 470px;
+    min-width: 350px;
+    flex: 1;
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    li {
+      margin-top: 1rem;
     }
   }
+  
 
   h2 {
     @include sectionHeading;
@@ -565,105 +578,12 @@ padding-bottom: 4rem;
     @include paragraphPadding;
   }
 
-  .price {
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    color: #000;
-    font-weight: bold;
-    
-  }
+  
 }
 
 
 
-.items {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: center;
 
-  h4 {
-    text-align: center;
-    color: #969699;
-  }
-
-  h3 {
-    padding-bottom: 0;
-  }
-  a {
-    text-decoration: none;
-    
-    border-radius: 20px;
-    
-    transition: all 200ms ease-in-out;
-    color: white;
-    
-   
-    
-  }
-
-
-
-  .imgc {
-    max-width: 500px;
-    overflow: hidden;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-
-    img {
-
-      max-width: 500px;
-      min-width: 300px;
-      max-height: 100vh;
-      display: block;
-      max-width: 100%;
-      max-height: 100%;
-      height: auto;
-      object-fit: contain;
-      overflow: hidden;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-      transition: all 0.3s ease-in-out;
-
-      @media (orientation: landscape) {
-        width: auto;
-      }
-    }
-  }
-
-  .card {
-    max-width: 400px;
-    min-width: 300px;
-    max-height: 100vh;
-    border-radius: 10px;
-    background-color: #fff;
-    position: relative;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
-    @media (orientation: landscape) {
-      max-height: max-content;
-    }
-
-    @include tabletP {
-      margin: 1rem;
-    }
-
-    @include tabletL {
-      margin: 2rem;
-    }
-  }
-
-  .card:hover img {
-    transform: scale(1.1);
-  }
-}
 /**************************************************************************
 *********************** Contact *****************************************/
 
