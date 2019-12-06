@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Tangerine&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=Montserrat|Tangerine&display=swap");
 
 @mixin phone {
   @media (max-width: 599px) {
@@ -84,7 +84,7 @@ html {
 body {
   height: 100%;
 
-  font-family: 'montserrat';
+  font-family: Arial, Helvetica, sans-serif, Tahoma;
 }
 
 *,
@@ -173,7 +173,8 @@ header {
     position: relative;
     color: #fff;
     top: 30%;
-    font-family: "tangerine";
+    font-family: "helvetica";
+    
     letter-spacing: 0.2rem;
     font-weight: bold;
     font-size: 3.5rem;
@@ -426,6 +427,7 @@ main {
       background: transparent;
       //border: 1px solid #f45b69;
       border-bottom: 1px solid $newyellow;
+      
     }
 
     div:before {
@@ -435,6 +437,7 @@ main {
       width: 0;
       height: 0;
       border-style: solid;
+      
     }
 
     :nth-child(odd) div {
@@ -446,6 +449,12 @@ main {
       border-width: 8px 16px 8px 0px;
       border-color: transparent #f45b69 transparent transparent;
     }
+
+    // :nth-child(odd) div:after {
+    //   border-left: 1px solid $newyellow;
+    //   content: '';
+     
+    // }
 
     :nth-child(even) div {
       left: -439px;
