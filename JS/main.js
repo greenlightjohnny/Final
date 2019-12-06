@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const hex = document.querySelectorAll('.hex');
   let slideLeft = document.querySelectorAll('.slideLeft');
  let swingRight = document.querySelectorAll('.swingRight');
+ const slideUp = document.querySelectorAll('.slideUp')
 
 
   console.log(slideItems)
@@ -157,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ///////LEFT/////////////
 slideLeft.forEach(i => {
-  if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+  if (i.getBoundingClientRect().top + i.scrollHeight / 1.9 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
       i.classList.add('fromLeft')
   } else {
       i.classList.remove('fromLeft')
@@ -173,6 +174,15 @@ swingRight.forEach(i => {
   }
 })
 
+
+////////SLIDEUP/////////////
+slideUp.forEach(i => {
+  if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+      i.classList.add('inView')
+  } else {
+      i.classList.remove('inView');
+  }
+})
 
 
   }

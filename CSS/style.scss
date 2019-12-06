@@ -140,13 +140,24 @@ body {
 }
 
 .fade-in-element2{
-  animation: fade-in2 2s;
+  animation: fade-in2 4s;
   
 }
 
 .hidden {
   opacity: 0;
 } 
+
+.slideUp {
+  transform: translateY(1.6rem * 2);
+  opacity: 0;
+  transition: opacity 300ms, transform 700ms;
+}
+
+.inView {
+  transform: translateY(0);
+  opacity: 1;
+}
 
 header {
   height: 100vh;
@@ -407,7 +418,22 @@ main {
 .timeline {
   background: #0c0c0c;
   padding: 50px 0;
+  position: relative;
+ 
 
+  h3 {
+    color: #ff0059;
+    font-size: 4rem;
+    text-align: center;
+
+    .blue {
+      color: $newyellow;
+    }
+  }
+    ul {
+      //margin-top: -10px;
+    }
+  
   ul, li {
     background: $newyellow;
     width: 7px;
@@ -416,7 +442,7 @@ main {
     color: #f4f4f4;
     padding-top: 50px;
     list-style-type: none;
-
+    margin-top: -17px;
     
 
     div {

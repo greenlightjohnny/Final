@@ -112,12 +112,28 @@ body {
 }
 
 .fade-in-element2 {
-  -webkit-animation: fade-in2 2s;
-          animation: fade-in2 2s;
+  -webkit-animation: fade-in2 4s;
+          animation: fade-in2 4s;
 }
 
 .hidden {
   opacity: 0;
+}
+
+.slideUp {
+  -webkit-transform: translateY(3.2rem);
+          transform: translateY(3.2rem);
+  opacity: 0;
+  -webkit-transition: opacity 300ms, -webkit-transform 700ms;
+  transition: opacity 300ms, -webkit-transform 700ms;
+  transition: opacity 300ms, transform 700ms;
+  transition: opacity 300ms, transform 700ms, -webkit-transform 700ms;
+}
+
+.inView {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
 }
 
 header {
@@ -423,6 +439,17 @@ main nav .menuIcon.open .bottomBar {
 .timeline {
   background: #0c0c0c;
   padding: 50px 0;
+  position: relative;
+}
+
+.timeline h3 {
+  color: #ff0059;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.timeline h3 .blue {
+  color: #4886d9;
 }
 
 .timeline ul, .timeline li {
@@ -433,6 +460,7 @@ main nav .menuIcon.open .bottomBar {
   color: #f4f4f4;
   padding-top: 50px;
   list-style-type: none;
+  margin-top: -17px;
 }
 
 .timeline ul div, .timeline li div {
