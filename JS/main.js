@@ -6,12 +6,12 @@ function fadeOnScroll() {
         const opacity = (window.pageYOffset / opacityAnchor);
         
         const beeBackground = document.querySelector('header');
-        beeBackground.style.background = "linear-gradient(rgba(253, 253, 253, " + (opacity / 2) + "), rgba(253, 253, 253, " + (opacity) + ")), url('./IMG/art50ss.jpg')";
+        beeBackground.style.background = "linear-gradient(rgba(12, 12, 12, " + (opacity / 2) + "), rgba(12, 12, 12, " + (opacity) + ")), url('./IMG/art50ss.jpg')", "background-attachment: fixed";
     } else if(window.pageYOffset >= 0 & window.innerWidth <= 599) {
         const opacity = (window.pageYOffset / opacityAnchor);
         
         const beeBackground = document.querySelector('header');
-        beeBackground.style.background = "linear-gradient(rgba(253, 253, 253, " + (opacity / 2) + "), rgba(253, 253, 253, " + (opacity) + ")), url('./IMG/art50-mobile.jpg')", "background-position: center", "background-size: cover", "background-repeat: no-repeat";
+        beeBackground.style.background = "linear-gradient(rgba(253, 253, 253, " + (opacity / 2) + "), rgba(253, 253, 253, " + (opacity) + ")), url('./IMG/art50-mobile.jpg')", "background-position: center", "background-size: cover", "background-repeat: no-repeat", "background-attachment: fixed";
     }
 }  
 
@@ -117,5 +117,65 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   })
   
-  
-  
+  //////////Slide in text////////
+  const slideItems = document.querySelectorAll('.slideRight')
+  const hex = document.querySelectorAll('.hex');
+  let slideLeft = document.querySelectorAll('.slideLeft');
+ let swingRight = document.querySelectorAll('.swingRight');
+
+
+  console.log(slideItems)
+  function slideIn() {
+    console.log('hi')
+    slideItems.forEach(i => {
+
+      if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+          i.classList.remove('hidden');
+          i.classList.add('fade-in-element');
+
+      } else {
+          i.classList.add('hidden');
+          i.classList.remove('fade-in-element');
+      }
+
+
+  })
+//////////////////HEX///////////
+  hex.forEach(i => {
+
+    if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+        i.classList.remove('hidden');
+        i.classList.add('fade-in-element2');
+
+    } else {
+        i.classList.add('hidden');
+        i.classList.remove('fade-in-element2');
+    }
+
+
+})
+
+///////LEFT/////////////
+slideLeft.forEach(i => {
+  if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+      i.classList.add('fromLeft')
+  } else {
+      i.classList.remove('fromLeft')
+  }
+})
+
+///////RIGHT/////////////
+swingRight.forEach(i => {
+  if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+      i.classList.add('fromRights')
+  } else {
+      i.classList.remove('fromRights')
+  }
+})
+
+
+
+  }
+
+
+  document.addEventListener("scroll", slideIn);

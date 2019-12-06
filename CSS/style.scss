@@ -71,6 +71,7 @@ $compblue: #23a1a6;
 
 $hmmy: #faed26;
 
+
 * {
   margin: 0;
   padding: 0;
@@ -98,15 +99,66 @@ body {
   }
 }
 
+@keyframes fade-in {
+  from {opacity: 0; transform: scale(.7, .7)}
+  to {opacity: 1;}
+}
+
+@keyframes fade-in2 {
+  from {opacity: 0; transform: scale(.7, .7), translateX(-50%)}
+  to {opacity: 1;}
+}
+
+.slideLeft {
+  transform: translateX(10rem);
+  transition: transform 300ms, opacity 300ms;
+  opacity: 0; 
+  overflow-x: hidden;
+}
+
+.fromLeft {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+.swingRight {
+  transform: translateX(-10rem);
+  transition: transform 300ms, opacity 300ms;
+  opacity: 0; 
+  overflow-x: hidden;
+}
+
+.fromRights {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+.fade-in-element{
+  animation: fade-in 1.4s;
+}
+
+.fade-in-element2{
+  animation: fade-in2 2s;
+  
+}
+
+.hidden {
+  opacity: 0;
+} 
+
 header {
   height: 100vh;
   width: 100%;
   min-width: 100%;
   min-height: 100vh;
-  background: linear-gradient(rgba(253, 253, 253, 0), rgba(253, 253, 253, 0)), url("/IMG/art50ss.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/IMG/art50ss.jpg");
   background-repeat: no-repeat !important;
   background-position: center center !important;
   background-size: cover !important;
+  background-attachment: fixed;
+ 
 
   @include phone {
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/IMG/art50-mobile.jpg");
@@ -166,7 +218,7 @@ main {
    
     transition: all ease-in-out 1s;
     box-shadow: 0;
-    background: rgba(253, 253, 253, 1);
+    background: #0c0c0c;
     
     font-size: 1.3rem;
     color: $offblack;
@@ -230,7 +282,7 @@ main {
 
       @include tabletL {
         display: inline-block;
-        margin-left: 1%;
+        margin-left: 12px;
       }
     }
 
@@ -240,7 +292,7 @@ main {
 
     a {
       text-decoration: none;
-      color: $offblack;
+      color: $newyellow;
       transition: all ease-in-out 300ms;
     }
 
@@ -348,6 +400,143 @@ main {
     top: -100px;
   }
 }
+
+/********TIMELINE****************/
+
+.timeline {
+  background: #0c0c0c;
+  padding: 50px 0;
+
+  ul, li {
+    background: $newyellow;
+    width: 7px;
+    margin: 0 auto;
+    position: relative;
+    color: #f4f4f4;
+    padding-top: 50px;
+    list-style-type: none;
+
+    
+
+    div {
+      position: relative;
+      padding: 1rem;
+      bottom: 0;
+      width: 400px;
+      background: transparent;
+      //border: 1px solid #f45b69;
+      border-bottom: 1px solid $newyellow;
+    }
+
+    div:before {
+      content: '';
+      position: absolute;
+      bottom: 7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    :nth-child(odd) div {
+      left: 45px;
+    }
+
+    :nth-child(odd) div:before {
+      left: -15px;
+      border-width: 8px 16px 8px 0px;
+      border-color: transparent #f45b69 transparent transparent;
+    }
+
+    :nth-child(even) div {
+      left: -439px;
+    }
+
+    :nth-child(even) div:before {
+      right: -15px;
+      border-width: 8px 0 8px 16px;
+      border-color: transparent transparent transparent #f45b69;
+    }
+
+    li::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      width: 2rem;
+      height: 2rem;
+      bottom: 0;
+      background: $newyellow;
+      visibility: hidden;
+      transition: all ease-in-out .3s;
+    }
+
+    .hex {
+      font-size: 3rem;
+      color: #f45b69;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -12px;
+      z-index: 2;
+      
+      
+      //transform: rotate(27deg) translateX(-50%);
+    }
+
+    
+
+    // .hex {
+    //   margin-top: 30px;
+    //   width: 104px;
+    //   height: 60px;
+    //   background-color: #6C6;
+    //   position: relative;
+    // }
+
+    // .hex:after {
+    //   content: "";
+    // width: 0;
+    // position: absolute;
+    // bottom: -30px;
+    // border-top: 30px solid #6C6;
+    // border-left: 52px solid transparent;
+    // border-right: 52px solid transparent;
+    // }
+
+    // .hex:before {
+    //   content: " ";
+    //   width: 0; height: 0;
+    //   border-bottom: 30px solid #6C6;
+    //   border-left: 52px solid transparent;
+    //   border-right: 52px solid transparent;
+    //   position: absolute;
+    //   top: -30px;
+    // }
+    
+  }
+
+  ul:after, li:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+
+  time {
+    display: block;
+    margin-bottom: .5rem;
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+
+}
+
 
 /********** Articles *********/
 
@@ -513,7 +702,7 @@ padding-bottom: 4rem;
 .resources {
   padding-bottom: 4rem;
   padding-top: 4rem;
-  background: linear-gradient(#fff);
+  background: linear-gradient(rgb(27, 27, 27));
 
   @include tabletL {
     padding-top: 3rem;
@@ -530,12 +719,13 @@ padding-bottom: 4rem;
   }
 
   .water {
-    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    box-shadow: 0 0 15px rgba(0,0,0,.7);
     padding: 1rem;
     margin: 1rem;
     max-width: 470px;
     min-width: 350px;
     flex: 1;
+    background: #fdfdfd;
 
     ul {
       padding-left: 1rem;
@@ -543,13 +733,22 @@ padding-bottom: 4rem;
 
     li {
       margin-top: 1rem;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      padding-right: .5rem;
+      font-size: 1.2rem;
+      color: #ff0059;
+
     }
   }
   
 
   h2 {
     @include sectionHeading;
-    color: #000;
+    color: #fff;
     padding-bottom: 0.5rem;
     padding-top: 1rem;
     display: flex;
@@ -561,7 +760,7 @@ padding-bottom: 4rem;
 
   h3 {
     @include subHeading;
-    color: $offblack;
+    color: rgb(41, 231, 214);
     font-size: 1.8rem;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
@@ -573,7 +772,7 @@ padding-bottom: 4rem;
   }
 
   p {
-    color: #000;
+    color: #fff;
     line-height: 1.7rem;
     @include paragraphPadding;
   }
@@ -748,82 +947,42 @@ footer {
 /***********************************SNIPCART BUTTONS****************/
 
 
-.snipcart-add-item {
-  
-         
-         background: #fff;
-         border: 1px solid #000;
-         padding: 8px 0px;
-         margin-bottom: 30px;
-         color: #515151;
-         text-transform: uppercase;
-         width: 125px;
-         font-family: inherit;
-         margin-right: 5px;
-         transition: all 0.3s ease;
-         font-weight: 500;
-         margin: 0 auto;
-         margin-bottom: 1rem;
-         margin-top: auto;
-         align-items: center;
-         
-
-        
-         
-}
-// .snipcart-add-item {
-  
-//   width: 200px;
-//   margin: 0 auto;
-//   margin-bottom: 2rem;
-//   height: 2rem;
-//   border-radius: 20px;
-//   color: black;
-//   background-color: $hmmy;
-//   border-color: transparent;
-//   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-//   font-size: 1.2rem;
-// }
-
-.snipcart-add-item:hover, .bStyle:hover {
-  cursor: pointer;
-  border: 1px solid #000;
-           color: #fff;
-           background-color: #000;
-           cursor: pointer
-  //box-shadow: 0 0 10px 0 $hmmy inset, 0 0 10px 4px $hmmy;
-}
-
-
-//////
-.bStyle {
-  
-  background: #fff;
-  border: 1px solid #000;
-  padding: 8px 0px;
-
-  color: #515151;
-  text-transform: uppercase;
-  width: 125px;
-  font-family: inherit;
-  margin-right: 5px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  margin: 0 auto;
-  margin-top: auto;
-  margin-bottom: 1rem;
- 
-  display: block;
-}
-
-#cButton {
-  margin: auto auto 0 auto;
-  font-weight: bold;
-  width: 125px;
-  display: block;
-}
-
-
 
 //////////////test////////////
 
+.test {
+  width: 100%;
+  background: #0c0c0c;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+    .what {
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    h1, h3 {
+    font-size: 5rem;
+    color: #ff0059;
+
+      .upup {
+      color: #fff;
+      font-size: 3rem;
+      }
+
+    
+    }
+
+  .mission {
+    padding-top: 3rem;
+  }
+
+  p {
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    //border: 1px solid $newyellow;
+    padding: 1.5rem;
+  }
+}
