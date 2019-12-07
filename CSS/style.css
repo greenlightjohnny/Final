@@ -1,13 +1,14 @@
 /******pic colors ******/
-* {
+*, *:before, *:after {
   margin: 0;
   padding: 0;
-}
-
-html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -238,8 +239,8 @@ main nav {
 main nav .logo {
   margin-left: 10%;
   height: 4rem;
-  -webkit-transition: all ease-in-out .5s;
-  transition: all ease-in-out .5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
   width: 144;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -439,20 +440,26 @@ main nav .menuIcon.open .bottomBar {
 .timeline {
   background: #0c0c0c;
   padding: 50px 0;
-  position: relative;
 }
 
 .timeline h3 {
   color: #ff0059;
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
-.timeline h3 .blue {
-  color: #4886d9;
+@media (min-width: 900px) {
+  .timeline h3 {
+    font-size: 5rem;
+  }
 }
 
-.timeline ul, .timeline li {
+.timeline ul {
+  padding: 50px 0;
+  list-style-type: none;
+}
+
+.timeline ul li {
   background: #4886d9;
   width: 7px;
   margin: 0 auto;
@@ -463,94 +470,92 @@ main nav .menuIcon.open .bottomBar {
   margin-top: -17px;
 }
 
-.timeline ul div, .timeline li div {
+.timeline ul li div {
   position: relative;
-  padding: 1rem;
+  padding: 15px;
   bottom: 0;
   width: 400px;
   background: transparent;
   border-bottom: 1px solid #4886d9;
+  line-height: 1.7rem;
 }
 
-.timeline ul div:before, .timeline li div:before {
-  content: '';
+.timeline ul li div:before {
+  content: "";
   position: absolute;
-  bottom: 7px;
+  bottom: -2px;
   width: 0;
   height: 0;
   border-style: solid;
 }
 
-.timeline ul :nth-child(odd) div, .timeline li :nth-child(odd) div {
-  left: 45px;
-}
-
-.timeline ul :nth-child(odd) div:before, .timeline li :nth-child(odd) div:before {
-  left: -15px;
-  border-width: 8px 16px 8px 0px;
-  border-color: transparent #f45b69 transparent transparent;
-}
-
-.timeline ul :nth-child(even) div, .timeline li :nth-child(even) div {
-  left: -439px;
-}
-
-.timeline ul :nth-child(even) div:before, .timeline li :nth-child(even) div:before {
-  right: -15px;
-  border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #f45b69;
-}
-
-.timeline ul li::after, .timeline li li::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  border-radius: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 2rem;
-  height: 2rem;
-  bottom: 0;
-  background: #4886d9;
-  visibility: hidden;
-  -webkit-transition: all ease-in-out .3s;
-  transition: all ease-in-out .3s;
-}
-
-.timeline ul .hex, .timeline li .hex {
+.timeline ul li .hex {
   font-size: 3rem;
   color: #f45b69;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: -12px;
+  bottom: -21px;
   z-index: 2;
 }
 
-.timeline ul:after, .timeline li:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-}
-
-.timeline time {
+.timeline ul time {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   display: block;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div:before {
+  left: -15px;
+  border-width: 8px 16px 8px 0px;
+  border-color: transparent #4886d9 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+  left: -439px;
+}
+
+.timeline ul li:nth-child(even) div:before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #4886d9;
+}
+
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #F45B69 transparent transparent;
+  }
+}
+
 /********** Articles *********/
 .about {
-  background: -webkit-gradient(linear, left top, left bottom, from(#FDFDFD), to(#F2F2F2));
-  background: linear-gradient(to bottom, #FDFDFD, #F2F2F2);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#f2f2f2));
+  background: linear-gradient(to bottom, #fdfdfd, #f2f2f2);
   padding-bottom: 4rem;
 }
 
@@ -618,7 +623,6 @@ main nav .menuIcon.open .bottomBar {
   text-align: center;
   padding-bottom: 1rem;
   color: #000;
-  font-family: 'tangerine';
   font-weight: bold;
   font-size: 2rem;
 }
@@ -630,7 +634,8 @@ main nav .menuIcon.open .bottomBar {
 }
 
 @media (min-width: 900px) {
-  .centert .flexNew .info, .centert .flexNew .intro {
+  .centert .flexNew .info,
+  .centert .flexNew .intro {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -663,11 +668,10 @@ main nav .menuIcon.open .bottomBar {
   display: none;
   color: #000;
   font-size: 4rem;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   font-weight: bold;
   padding-top: 1rem;
   text-align: center;
-  font-family: 'tangerine';
 }
 
 .centert .flexNew .info .card p {
@@ -733,8 +737,6 @@ main nav .menuIcon.open .bottomBar {
 }
 
 .resources .water {
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-          box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
   padding: 1rem;
   margin: 1rem;
   max-width: 470px;
@@ -742,7 +744,7 @@ main nav .menuIcon.open .bottomBar {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background: #fdfdfd;
+  background: transparent;
 }
 
 .resources .water ul {
@@ -756,9 +758,9 @@ main nav .menuIcon.open .bottomBar {
 
 .resources .water a {
   text-decoration: none;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
   font-size: 1.2rem;
-  color: #ff0059;
+  color: #4886d9;
 }
 
 .resources h2 {
@@ -767,14 +769,14 @@ main nav .menuIcon.open .bottomBar {
   letter-spacing: 0.2rem;
   padding: 2rem 0 2rem 0;
   color: #f2f2f2;
-  font-family: "montserrat";
-  color: #fff;
+  color: #ff0059;
   padding-bottom: 0.5rem;
   padding-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  font-size: 2.5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -787,8 +789,7 @@ main nav .menuIcon.open .bottomBar {
 .resources h3 {
   text-align: center;
   font-size: 2rem;
-  font-family: "Montserrat";
-  color: #29e7d6;
+  color: #f4f4f4;
   font-size: 1.8rem;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
@@ -906,7 +907,6 @@ main nav .menuIcon.open .bottomBar {
   font-size: 1.2rem;
   padding: 4px;
   border-style: outset;
-  font-family: "montserrat";
   margin-top: 2%;
 }
 
@@ -953,7 +953,6 @@ main nav .menuIcon.open .bottomBar {
   border-radius: 10px;
   min-height: 10rem;
   padding: 5px;
-  font-family: "montserrat";
   margin-top: 2%;
 }
 
@@ -963,7 +962,6 @@ main nav .menuIcon.open .bottomBar {
   letter-spacing: 0.2rem;
   padding: 2rem 0 2rem 0;
   color: #f2f2f2;
-  font-family: "montserrat";
   padding-top: 4rem;
 }
 
@@ -1002,12 +1000,14 @@ footer div {
   width: 90%;
 }
 
-.test h1, .test h3 {
-  font-size: 5rem;
-  color: #ff0059;
+.test h1,
+.test h3 {
+  font-size: 2.5rem;
+  color: #f45b69;
 }
 
-.test h1 .upup, .test h3 .upup {
+.test h1 .upup,
+.test h3 .upup {
   color: #fff;
   font-size: 3rem;
 }

@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ///////LEFT/////////////
 slideLeft.forEach(i => {
-  if (i.getBoundingClientRect().top + i.scrollHeight / 1.9 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+  if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
       i.classList.add('fromLeft')
   } else {
       i.classList.remove('fromLeft')
