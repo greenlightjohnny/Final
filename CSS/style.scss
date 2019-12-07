@@ -79,7 +79,7 @@ $hmmy: #faed26;
 html, body {
   //box-sizing: border-box;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+ // overflow-x: hidden;
 }
 
 body {
@@ -192,7 +192,7 @@ header {
     position: relative;
     color: #fff;
     top: 30%;
-    font-family: "helvetica";
+    font-family: "Helvetica";
 
     letter-spacing: 0.2rem;
     font-weight: bold;
@@ -424,7 +424,7 @@ main {
 .timeline {
   background: #0c0c0c;
   padding: 50px 0;
-  
+  overflow-x: hidden;
     h3 {
     color: #ff0059;
     font-size: 2.5rem;
