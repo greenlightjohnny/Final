@@ -12,7 +12,7 @@ html, body {
 
 body {
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif, Tahoma;
+  font-family: Arial, "Arial Black", Helvetica, sans-serif, Tahoma;
 }
 
 *,
@@ -160,12 +160,19 @@ header img {
   display: inline-block;
 }
 
+header .newlogo {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
 header h1 {
   text-align: center;
   position: relative;
   color: #fff;
   top: 30%;
-  font-family: "Helvetica";
+  font-family: "Arial Black";
   letter-spacing: 0.2rem;
   font-weight: bold;
   font-size: 3.5rem;
@@ -200,7 +207,7 @@ header h1 {
 }
 
 .backgroundOpacity {
-  background: rgba(253, 253, 253, 0.9);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 main {
@@ -314,9 +321,12 @@ main nav li:first-child {
 
 main nav a {
   text-decoration: none;
-  color: #4886d9;
+  color: #f4f4f4;
   -webkit-transition: all ease-in-out 300ms;
   transition: all ease-in-out 300ms;
+  opacity: 0;
+  -webkit-transition: all ease-in-out .3s;
+  transition: all ease-in-out .3s;
 }
 
 main nav a:hover {
@@ -410,12 +420,23 @@ main nav .menuIcon.open .bottomBar {
           transform: scaleY(1);
 }
 
+.fadeNav {
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
+  opacity: 1;
+}
+
 .addShadow {
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+  background: #0c0c0c;
+}
+
+.addShadow a {
+  opacity: 1;
 }
 
 .navAnch {
@@ -440,6 +461,8 @@ main nav .menuIcon.open .bottomBar {
   background: #0c0c0c;
   padding: 50px 0;
   overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .timeline h3 {
@@ -706,8 +729,7 @@ main nav .menuIcon.open .bottomBar {
 .resources {
   padding-bottom: 4rem;
   padding-top: 4rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#1b1b1b));
-  background: linear-gradient(#1b1b1b);
+  background: #0c0c0c;
 }
 
 @media (min-width: 900px) {
@@ -769,12 +791,13 @@ main nav .menuIcon.open .bottomBar {
   letter-spacing: 0.2rem;
   padding: 2rem 0 2rem 0;
   color: #f2f2f2;
-  color: #ff0059;
+  color: #fff;
   padding-bottom: 0.5rem;
   padding-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  letter-spacing: 0;
   width: 100%;
   font-size: 2.5rem;
   -webkit-box-pack: center;
@@ -784,6 +807,13 @@ main nav .menuIcon.open .bottomBar {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  font-family: "Arial";
+}
+
+@media (min-width: 900px) {
+  .resources h2 {
+    font-size: 5rem;
+  }
 }
 
 .resources h3 {
@@ -820,6 +850,12 @@ main nav .menuIcon.open .bottomBar {
 
 .contact .highlightY {
   color: #fff;
+}
+
+@media (min-width: 900px) {
+  .contact .highlightY {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 900px) {
@@ -905,16 +941,33 @@ main nav .menuIcon.open .bottomBar {
   margin-bottom: 5%;
   border-radius: 7px;
   font-size: 1.2rem;
-  padding: 4px;
-  border-style: outset;
+  padding: 7px;
+  border: 1px solid #4886d9;
   margin-top: 2%;
+  background: transparent;
+}
+
+.contact ::-webkit-input-placeholder {
+  color: #fdfdfd;
+}
+
+.contact :-ms-input-placeholder {
+  color: #fdfdfd;
+}
+
+.contact ::-ms-input-placeholder {
+  color: #fdfdfd;
+}
+
+.contact ::placeholder {
+  color: #fdfdfd;
 }
 
 .contact #button {
-  background: #fff;
+  background: transparent;
   padding: 8px 0px;
   margin-bottom: 30px;
-  color: #515151;
+  color: #f45b69;
   text-transform: uppercase;
   width: 125px;
   font-family: inherit;
@@ -940,10 +993,10 @@ main nav .menuIcon.open .bottomBar {
 }
 
 .contact #button:hover {
-  color: #fff;
+  color: #ff0059;
   background-color: #000;
   cursor: pointer;
-  border: 2px solid #fff;
+  border: 1px solid #4886d9;
 }
 
 .contact textarea {
@@ -952,8 +1005,11 @@ main nav .menuIcon.open .bottomBar {
   font-size: 1.2rem;
   border-radius: 10px;
   min-height: 10rem;
-  padding: 5px;
+  border: 1px solid #4886d9;
+  padding: 7px;
   margin-top: 2%;
+  background: transparent;
+  font-family: 'arial';
 }
 
 .contact h2 {
@@ -995,15 +1051,32 @@ footer div {
   padding-bottom: 4rem;
 }
 
+.test .acc {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 .test .what {
   margin: 0 auto;
   width: 90%;
+  max-width: 700px;
+}
+
+.test h1, .test h3 {
+  padding-left: 15px;
 }
 
 .test h1,
 .test h3 {
-  font-size: 2.5rem;
-  color: #f45b69;
+  font-size: 3rem;
+  color: #ff0059;
+}
+
+@media (min-width: 900px) {
+  .test h1,
+  .test h3 {
+    font-size: 4rem;
+  }
 }
 
 .test h1 .upup,
@@ -1022,5 +1095,6 @@ footer div {
   margin: 0 auto;
   font-size: 1.2rem;
   padding: 1.5rem;
+  line-height: 1.6rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -85,7 +85,7 @@ html, body {
 body {
   height: 100%;
 
-  font-family: Arial, Helvetica, sans-serif, Tahoma;
+  font-family: Arial, "Arial Black", Helvetica, sans-serif, Tahoma;
 }
 
 
@@ -186,13 +186,19 @@ header {
   img {
     display: inline-block;
   }
+  .newlogo {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 200px;
+  }
 
   h1 {
     text-align: center;
     position: relative;
     color: #fff;
     top: 30%;
-    font-family: "Helvetica";
+    font-family: "Arial Black";
 
     letter-spacing: 0.2rem;
     font-weight: bold;
@@ -224,7 +230,7 @@ header {
   color: $picyellow;
 }
 .backgroundOpacity {
-  background: rgba(253, 253, 253, 0.9);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 main {
@@ -310,8 +316,10 @@ main {
 
     a {
       text-decoration: none;
-      color: $newyellow;
+      color: #f4f4f4;
       transition: all ease-in-out 300ms;
+      opacity: 0;
+      transition: all ease-in-out .3s;
     }
 
     a:hover {
@@ -396,12 +404,23 @@ main {
   opacity: 1;
   max-height: 1000px;
   transform: scaleY(1);
+  
+}
+
+.fadeNav {
+  transition: all ease-in-out 1s;
+  opacity: 1;
 }
 
 .addShadow {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  //box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   position: sticky;
   top: 0;
+  transition: opacity 3s;
+  background: #0c0c0c;
+  a {
+    opacity: 1;
+  }
 }
 
 .navAnch {
@@ -425,10 +444,13 @@ main {
   background: #0c0c0c;
   padding: 50px 0;
   overflow-x: hidden;
+  box-sizing: border-box;
+  
     h3 {
     color: #ff0059;
     font-size: 2.5rem;
     text-align: center;
+   
     @include tabletL {
       font-size: 5rem;
     }
@@ -511,6 +533,7 @@ main {
     left: -15px;
     border-width: 8px 16px 8px 0px;
     border-color: transparent $newyellow transparent transparent;
+    
   }
 
   // :nth-child(odd) div:after {
@@ -527,6 +550,7 @@ main {
     right: -15px;
     border-width: 8px 0 8px 16px;
     border-color: transparent transparent transparent $newyellow;
+    
   }
 
 
@@ -735,7 +759,7 @@ main {
 .resources {
   padding-bottom: 4rem;
   padding-top: 4rem;
-  background: linear-gradient(rgb(27, 27, 27));
+  background: #0c0c0c;
 
  
 
@@ -782,15 +806,21 @@ main {
 
   h2 {
     @include sectionHeading;
-    color: #ff0059;
+    color: #fff;
     padding-bottom: 0.5rem;
     padding-top: 1rem;
     display: flex;
+    letter-spacing: 0;
     width: 100%;
     font-size: 2.5rem;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: "Arial";
+    @include tabletL {
+      font-size: 5rem;
+      
+    }
   }
 
   h3 {
@@ -824,6 +854,10 @@ main {
   }
   .highlightY {
     color: #fff;
+    
+    @include tabletL {
+      font-size: 5rem;
+    }
   }
 
   .contactFlex {
@@ -892,18 +926,24 @@ main {
     margin-bottom: 5%;
     border-radius: 7px;
     font-size: 1.2rem;
-    padding: 4px;
-    border-style: outset;
+    padding: 7px;
+    border: 1px solid $newyellow;
     //font-family: "montserrat";
     margin-top: 2%;
+    background: transparent;
+    
+    
+  }
+  ::placeholder {
+    color: #fdfdfd;
   }
 
   #button {
-    background: #fff;
+    background: transparent;
     //border: 1px solid #000;
     padding: 8px 0px;
     margin-bottom: 30px;
-    color: #515151;
+    color: #f45b69;
     text-transform: uppercase;
     width: 125px;
     font-family: inherit;
@@ -925,10 +965,10 @@ main {
   }
 
   #button:hover {
-    color: #fff;
+    color: #ff0059;
     background-color: #000;
     cursor: pointer;
-    border: 2px solid #fff;
+    border: 1px solid $newyellow;
   }
   textarea {
     width: 100%;
@@ -936,9 +976,12 @@ main {
     font-size: 1.2rem;
     border-radius: 10px;
     min-height: 10rem;
-    padding: 5px;
+    border: 1px solid $newyellow;
+    padding: 7px;
     //font-family: "montserrat";
     margin-top: 2%;
+    background: transparent;
+    font-family: 'arial';
   }
 
   h2 {
@@ -980,17 +1023,26 @@ footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 
+  .acc {
+    font-size: 3rem;
+    font-weight: bold;
+  }
   .what {
     margin: 0 auto;
     width: 90%;
+    max-width: 700px;
   }
-
+  h1, h3 {
+   padding-left: 15px;
+  }
   h1,
   h3 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     //color: #ff0059;
-    color: #f45b69;
-
+    color: #ff0059;
+    @include tabletL {
+      font-size: 4rem;
+    }
     .upup {
       color: #fff;
       font-size: 3rem;
@@ -1008,5 +1060,6 @@ footer {
     font-size: 1.2rem;
     //border: 1px solid $newyellow;
     padding: 1.5rem;
+    line-height: 1.6rem;
   }
 }

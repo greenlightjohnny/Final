@@ -11,7 +11,7 @@ function fadeOnScroll() {
         const opacity = (window.pageYOffset / opacityAnchor);
         
         const beeBackground = document.querySelector('header');
-        beeBackground.style.background = "linear-gradient(rgba(253, 253, 253, " + (opacity / 2) + "), rgba(253, 253, 253, " + (opacity) + ")), url('./IMG/art50-mobile.jpg')", "background-position: center", "background-size: cover", "background-repeat: no-repeat", "background-attachment: fixed";
+        beeBackground.style.background = "linear-gradient(rgba(12, 12, 12, " + (opacity / 2) + "), rgba(12, 12, 12, " + (opacity) + ")), url('./IMG/art50-mobile.jpg')", "background-position: center", "background-size: cover", "background-repeat: no-repeat", "background-attachment: fixed";
     }
 }  
 
@@ -49,6 +49,7 @@ menuItems.forEach(i => i.addEventListener('click', menuToggle));
 
 const navAnch = document.querySelector('.navAnch');
 const navBar = document.querySelector('nav');
+const navAa = document.querySelectorAll('nav ul li a');
 
 function addShadow() {
     const navOffset = navAnch.offsetTop;
@@ -57,9 +58,11 @@ function addShadow() {
     if(window.pageYOffset >= navOffset) {
         navBar.classList.add('addShadow');
         logo.classList.add('shrink');
+        navAa.forEach(i => i.classList.add('fadeNav'));
     } else {
       navBar.classList.remove('addShadow');
       logo.classList.remove('shrink');
+      navAa.forEach(i => i.classList.remove('fadenav'));
     }
 }
 
